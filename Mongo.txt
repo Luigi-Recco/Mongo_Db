@@ -1,0 +1,69 @@
+ex1
+db.cliente.insertMany([
+  { 
+      id: 1,
+      name: 'Ryan',
+      email: 'lugireccopinheiro@gmail.com',
+      age:27, 
+      
+      produto:[
+        {id: 1},
+          {tipo: 'camisa'},
+          {marca: 'polo'},
+          { tamanho: 'pp'},
+          {idProd:1}]
+    }
+]);
+
+        db.cliente.find({id:1},{produto:{$slice:[0,2]}});
+
+
+
+db.cidades.insertMany([
+    {
+        idCidade:1,
+        idFornecedor:1
+    }
+]);
+
+db.fornecedor.insertMany([
+    {
+        id:1,
+        idprod:1,
+        idCidade:1,
+        Empresa:'Gugu Tech'
+    }
+]);
+
+db.produto.insertMany([
+    {
+        id:1,
+        idfornecedor:1,
+        tipo:'cpu',
+        marca:'positivo do gugu',
+        tamanho:'30cm'
+    }    
+]);
+
+    db.produto.find({tipo:'cpu'},{idfornecedor:1});
+
+
+
+ex3
+db.autor.insertMany([
+    {
+        id:1,
+        contato: 11994983224,
+        idObras:23,
+
+        livros:[
+            {id:23},
+            {ano:1996},
+            {Título:'O brilho de mil soís'},
+            {Editora:'Ática'}
+        ]
+    } 
+]);
+
+db.autor.find({idOba:23});
+
